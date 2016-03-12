@@ -40,6 +40,20 @@ namespace opssau2
             {
                 DatabaseHelper.InsertCity(cityName);
             }
+
+            DatabaseHelper.InsertTeam(teamName, captainName, secondName, thirdName, cityName);
+
+            Response.Redirect("Registration.aspx");
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            GridView1.Visible = true;
+        }
+
+        protected void LinkButton3_Click(object sender, EventArgs e)
+        {
+            GridView3.Visible = true;
         }
     }
 }

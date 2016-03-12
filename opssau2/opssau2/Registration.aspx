@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <link href="css/style.css" rel="stylesheet">
     <link rel="icon" type="image/jpg" href="images/icon.jpg" />
-          <script src="js/valid_reg.js"></script>
+    <script src="js/valid_reg.js"></script>
 </head>
 
 <body>
@@ -37,7 +37,7 @@
                         <p>
                             <p>
                                 Город:&nbsp;
-                                <asp:DropDownList ID="cityDropDown" class='input edittext' runat="server" DataSourceID="SqlDataSource1" DataTextField="Название" DataValueField="Название">
+                                <asp:DropDownList ID="cityDropDown" class='input edittext' runat="server" DataSourceID="SqlDataSource2" DataTextField="Название" DataValueField="Название">
                                 </asp:DropDownList>
                             </p>
                             <p>
@@ -71,9 +71,39 @@
                                 <hr>
                                 &nbsp;<asp:Button Text="Submit" runat="server" OnClientClick="return validateForm(document.forms.registration_form, true);" OnClick="Registrate" CssClass="input button" />
                                 &nbsp;</p>
+                            
+                            <p><br/><br/><asp:LinkButton ID="LinkButton3" runat="server" CssClass="a" OnClick="LinkButton3_Click">Показать зарегистрированные команды</asp:LinkButton></p>
+                       
+                            <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource3" Visible="False" Width="396px">
+        <Columns>
+            <asp:BoundField DataField="Название" HeaderText="Название" SortExpression="Название" />
+            <asp:BoundField DataField="Капитан" HeaderText="Капитан" SortExpression="Капитан" />
+            <asp:BoundField DataField="Второй" HeaderText="Второй" SortExpression="Второй" />
+            <asp:BoundField DataField="Третий" HeaderText="Третий" SortExpression="Третий" />
+            <asp:BoundField DataField="Город" HeaderText="Город" SortExpression="Город" />
+        </Columns>
+    </asp:GridView>
+
+                            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" ProviderName="<%$ ConnectionStrings:ConnectionString2.ProviderName %>" SelectCommand="SELECT [Название], [Капитан], [Второй], [Третий], [Город] FROM [Команда]"></asp:SqlDataSource>
+
+                            <p><asp:LinkButton ID="LinkButton1" runat="server" CssClass="a" OnClick="Button1_Click">Показать команды с дублирующимися названиями</asp:LinkButton></p>
+                       
+                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Visible="False" Width="396px">
+        <Columns>
+            <asp:BoundField DataField="Название" HeaderText="Название" SortExpression="Название" />
+            <asp:BoundField DataField="Капитан" HeaderText="Капитан" SortExpression="Капитан" />
+            <asp:BoundField DataField="Второй" HeaderText="Второй участник" SortExpression="Второй" />
+            <asp:BoundField DataField="Третий" HeaderText="Третий участник" SortExpression="Третий" />
+            <asp:BoundField DataField="Почта" HeaderText="email" SortExpression="Почта" />
+        </Columns>
+    </asp:GridView>
+                       
+                            
+
                     </form>
 
-                </main><!-- .content -->
+                </main>
+                <!-- .content -->
             </div>
             <!-- .container-->
 
@@ -106,12 +136,16 @@
             </aside>
             <!-- .left-sidebar -->
 
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:OPSSAU_CONNECTION_STRING %>" ProviderName="<%$ ConnectionStrings:OPSSAU_CONNECTION_STRING.ProviderName %>" SelectCommand="SELECT [Название] FROM [Город] ORDER BY [Код]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:OPSSAU_CONNECTION_STRING %>" ProviderName="<%$ ConnectionStrings:OPSSAU_CONNECTION_STRING.ProviderName %>" SelectCommand="SELECT к.Название, к.Капитан, к.Второй, к.Третий, к.Почта FROM Команда к INNER JOIN (SELECT Название, COUNT(*) FROM Команда GROUP BY Название HAVING COUNT(*) &gt; 1) dt on к.Название=dt.Название"></asp:SqlDataSource>
+
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Название] FROM [Город] ORDER BY [Код]"></asp:SqlDataSource>
 
         </div>
         <!-- .middle-->
     </div>
 
     <script src="js/valid_reg.js"></script>
+
+
 </body>
 </html>

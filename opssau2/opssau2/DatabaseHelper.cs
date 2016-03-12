@@ -86,6 +86,25 @@ namespace opssau2
             return result;
         }
 
+        public static void InsertTeam(string name, string captain, string second, string third, string city)
+        {
+            string insertString = "Insert Into Команда (Название, Капитан, Второй, Третий, Город) Values (?, ?, ?, ?, ?)";
+            using (OleDbConnection conn = new OleDbConnection(GetConnectionString()))
+            {
+                using (OleDbCommand cmd = new OleDbCommand(insertString, conn))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("Название", name);
+                    cmd.Parameters.AddWithValue("Капитан", captain);
+                    cmd.Parameters.AddWithValue("Второй", second);
+                    cmd.Parameters.AddWithValue("Третий", third);
+                    cmd.Parameters.AddWithValue("Город", city);
+                    
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
         
     }
 }

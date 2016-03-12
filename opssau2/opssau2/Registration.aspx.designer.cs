@@ -94,6 +94,51 @@ namespace opssau2 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText third;
         
         /// <summary>
+        /// LinkButton3 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton3;
+        
+        /// <summary>
+        /// GridView3 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView3;
+        
+        /// <summary>
+        /// SqlDataSource3 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
+        
+        /// <summary>
+        /// LinkButton1 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        
+        /// <summary>
+        /// GridView1 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView1;
+        
+        /// <summary>
         /// SqlDataSource1 элемент управления.
         /// </summary>
         /// <remarks>
@@ -101,5 +146,14 @@ namespace opssau2 {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        
+        /// <summary>
+        /// SqlDataSource2 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
     }
 }
