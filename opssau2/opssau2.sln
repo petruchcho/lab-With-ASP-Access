@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "opssau2", "opssau2\opssau2.csproj", "{82EE65D3-6418-4290-93D9-805139DB2B75}"
 EndProject
@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		opssau2\js\add_info.js = opssau2\js\add_info.js
 		opssau2\images\aicup.jpg = opssau2\images\aicup.jpg
+		opssau2\getTable.asp = opssau2\getTable.asp
 		opssau2\help.html = opssau2\help.html
 		opssau2\js\hide_text.js = opssau2\js\hide_text.js
 		opssau2\images\icon.jpg = opssau2\images\icon.jpg

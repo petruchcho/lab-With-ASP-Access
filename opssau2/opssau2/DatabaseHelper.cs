@@ -86,9 +86,9 @@ namespace opssau2
             return result;
         }
 
-        public static void InsertTeam(string name, string captain, string second, string third, string city)
+        public static void InsertTeam(string name, string captain, string second, string third, string city, string mail)
         {
-            string insertString = "Insert Into Команда (Название, Капитан, Второй, Третий, Город) Values (?, ?, ?, ?, ?)";
+            string insertString = "Insert Into Команда (Название, Капитан, Второй, Третий, Город) Values (?, ?, ?, ?, ?, ?)";
             using (OleDbConnection conn = new OleDbConnection(GetConnectionString()))
             {
                 using (OleDbCommand cmd = new OleDbCommand(insertString, conn))
@@ -99,6 +99,7 @@ namespace opssau2
                     cmd.Parameters.AddWithValue("Второй", second);
                     cmd.Parameters.AddWithValue("Третий", third);
                     cmd.Parameters.AddWithValue("Город", city);
+                    cmd.Parameters.AddWithValue("Почта", mail);
                     
                     conn.Open();
                     cmd.ExecuteNonQuery();

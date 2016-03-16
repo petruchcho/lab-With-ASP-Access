@@ -41,7 +41,7 @@ namespace opssau2
                 DatabaseHelper.InsertCity(cityName);
             }
 
-            DatabaseHelper.InsertTeam(teamName, captainName, secondName, thirdName, cityName);
+            DatabaseHelper.InsertTeam(teamName, captainName, secondName, thirdName, cityName, captainEmail);
 
             Response.Redirect("Registration.aspx");
         }
